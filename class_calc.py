@@ -4,10 +4,10 @@ opções = (None, 'Adição', 'Subtração', 'Multiplicação', 'Divisão', 'Pot
 
 class Calc:
 
-    def __init__(self):
+    def __init__(self, valor1, valor2):
         self.opção = 0
-        self.valor1 = 0
-        self.valor2 = 0
+        self.valor1 = valor1
+        self.valor2 = valor2
 
     def somar(self, valor1, valor2):
         total = self.valor1 + self.valor2
@@ -39,10 +39,8 @@ class Calc:
 [6] Sair
         ''')
 
-    def execução(self, opção, valor1, valor2):
+    def execução(self, opção):
         self.opção = opção
-        self.valor1 = valor1
-        self.valor2 = valor2
 
         if opções[self.opção] and self.opção == 6:
             sys.exit()
@@ -56,3 +54,4 @@ class Calc:
             print(self.dividir(self.valor1, self.valor2))
         elif opções[self.opção] and self.opção == 5:
             print(self.potenciar(self.valor1, self.valor2))
+        
